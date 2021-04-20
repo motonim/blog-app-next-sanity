@@ -1,8 +1,8 @@
 import { Row, Col } from 'react-bootstrap';
 import PageLayout from 'components/PageLayout';
 import AuthorIntro from 'components/AuthorIntro';
-import CardListItem from 'components/CardListItem';
 import CardItem from 'components/CardItem';
+import CardListItem from 'components/CardListItem';
 
 import { getAllBlogs } from 'lib/api';
 
@@ -11,12 +11,10 @@ export default function Home({ blogs }) {
     <PageLayout>
       <AuthorIntro />
       <hr />
-
       <Row className='mb-5'>
-        {/* <Col md='10'>
+        {/* <Col md="10">
           <CardListItem />
         </Col> */}
-
         {blogs.map((blog) => (
           <Col key={blog.slug} md='4'>
             <CardItem
@@ -25,6 +23,10 @@ export default function Home({ blogs }) {
               subtitle={blog.subtitle}
               date={blog.date}
               image={blog.coverImage}
+              link={{
+                href: '/blogs/[slug]',
+                as: `/blogs/${blog.slug}`,
+              }}
             />
           </Col>
         ))}
@@ -33,15 +35,13 @@ export default function Home({ blogs }) {
   );
 }
 
-// this function is called during the build (build time)
-// Provides props to your page
-// it will create static page
 export async function getStaticProps() {
+  const randomNumber = Math.random();
   const blogs = await getAllBlogs();
-
   return {
     props: {
       blogs,
+      randomNumber,
     },
   };
 }
