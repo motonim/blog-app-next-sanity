@@ -1,5 +1,5 @@
 import PageLayout from 'components/PageLayout';
-import { getBlogBySlug } from 'lib/api';
+import { getBlogBySlug, getAllBlogs } from 'lib/api';
 
 const BlogDetail = ({ blog }) => {
   return (
@@ -18,21 +18,14 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
+  const blogs = await getAllBlogs();
+  const paths = blogs?.map((b) => {
+    return {
+      params: { slug: b.slug },
+    };
+  });
   return {
-    paths: [
-      {
-        params: { slug: 'three-helpful-websites' },
-      },
-      {
-        params: { slug: 'what-im-doing-thesedays' },
-      },
-      {
-        params: { slug: 'im-excited-to-make-my-own-blog' },
-      },
-      {
-        params: { slug: 'how-i-decided-my-career' },
-      },
-    ],
+    paths,
     fallback: false,
   };
 }
