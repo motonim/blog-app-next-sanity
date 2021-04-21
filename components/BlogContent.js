@@ -12,7 +12,7 @@ const serializers = {
         </HighlightCode>
       );
     },
-    image: ({ node: { asset, alt } }) => {
+    image: ({ node: { asset, alt, position } }) => {
       return (
         <div className='blog-image'>
           <img src={urlFor(asset).height(500).fit('max').url()} />
