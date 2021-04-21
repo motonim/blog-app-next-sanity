@@ -1,13 +1,12 @@
-function FilteringMenu({ onChange }) {
+function FilteringMenu({ onChange, filter }) {
   return (
     <div className='filtering-menu mb-2'>
       <div
         onClick={() => {
-          alert('clicking!');
-          onChange();
+          onChange('view', { list: +!filter.view.list });
         }}
       >
-        Change View
+        List Filter - {filter.view.list}
       </div>
     </div>
   );
