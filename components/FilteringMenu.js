@@ -4,7 +4,7 @@ const LIST_VIEW_ICONS = ['list', 'border-all'];
 
 function FilteringMenu({ onChange, filter }) {
   return (
-    <div className='filtering-menu mb-2'>
+    <div className='filtering-menu mb-2 mt-4'>
       <FontAwesomeIcon
         className='clickable hoverable'
         size='2x'
