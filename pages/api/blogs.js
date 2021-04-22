@@ -1,5 +1,8 @@
-function getBlogs(req, res) {
-  res.status(200).json([1, 2, 3, 4, 5]);
+import { getAllBlogs } from 'lib/api';
+
+async function getBlogs(req, res) {
+  const data = await getAllBlogs();
+  res.status(200).json(data);
 }
 
 export default getBlogs;
