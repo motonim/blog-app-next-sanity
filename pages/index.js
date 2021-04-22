@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import useSWR from 'swr';
 import { Row, Col } from 'react-bootstrap';
 import PageLayout from 'components/PageLayout';
 import AuthorIntro from 'components/AuthorIntro';
@@ -8,15 +7,17 @@ import CardListItem from 'components/CardListItem';
 import FilteringMenu from 'components/FilteringMenu';
 
 import { getAllBlogs } from 'lib/api';
-
-const fetcher = (url) => fetch(url).then((res) => res.json());
+import { useGetBlogs } from 'actions';
 
 export default function Home({ blogs }) {
   const [filter, setFilter] = useState({
     view: { list: 0 },
   });
 
-  const { data, error } = useSWR('/api/hello', fetcher);
+  const { data, error } = useGetBlogs();
+  if (data) {
+    alert(JSON.stringify(data));
+  }
 
   return (
     <PageLayout>
