@@ -1,7 +1,7 @@
 import PageLayout from 'components/PageLayout';
 import BlogHeader from 'components/BlogHeader';
 import ErrorPage from 'next/error';
-import { getBlogBySlug, getPaginatedBlogs } from 'lib/api';
+import { getBlogBySlug, getAllBlogs } from 'lib/api';
 import { Row, Col } from 'react-bootstrap';
 import { urlFor } from 'lib/api';
 import moment from 'moment';
@@ -17,7 +17,6 @@ const BlogDetail = ({ blog }) => {
   }
 
   if (router.isFallback) {
-    console.log('Loading fallback page');
     return <PageLayout className='blog-detail-page'>Loading...</PageLayout>;
   }
 
@@ -41,8 +40,6 @@ const BlogDetail = ({ blog }) => {
 };
 
 export async function getStaticProps({ params }) {
-  console.log(params);
-  console.log('Loading Detail Page!!');
   const blog = await getBlogBySlug(params.slug);
 
   return {
@@ -51,9 +48,8 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
-  const blogs = await getPaginatedBlogs();
+  const blogs = await getAllBlogs();
   const paths = blogs?.map((b) => ({ params: { slug: b.slug } }));
-  console.log(paths);
   return {
     paths,
     fallback: true,
