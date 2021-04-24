@@ -15,8 +15,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'highlight.js/styles/darcula.css';
 import 'styles/index.scss';
 
-export default ({ Component, pageProps }) => (
-  <ThemeProvider>
-    <Component {...pageProps} />
-  </ThemeProvider>
-);
+function MyApp({ Component, pageProps }) {
+  return (
+    <ThemeProvider>
+      <Component {...pageProps} />
+    </ThemeProvider>
+  );
+}
+
+export default MyApp;
