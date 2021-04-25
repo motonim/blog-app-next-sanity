@@ -2,12 +2,11 @@ import { Row, Button } from 'react-bootstrap';
 import { useState } from 'react';
 import PageLayout from 'components/PageLayout';
 import AuthorIntro from 'components/AuthorIntro';
-
 import FilteringMenu from 'components/FilteringMenu';
-
-import useGetBlogsPages from 'actions/pagination';
-import { getPaginatedBlogs } from 'lib/api';
 import PreviewAlert from 'components/PreviewAlert';
+
+import { useGetBlogsPages } from 'actions/pagination';
+import { getPaginatedBlogs } from 'lib/api';
 
 export default function Home({ blogs, preview }) {
   const [filter, setFilter] = useState({
