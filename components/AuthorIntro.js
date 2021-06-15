@@ -10,7 +10,7 @@ const AuthorIntro = () => (
           width={64}
           height={64}
           className='mr-3'
-          src='https://scontent.fymy1-2.fna.fbcdn.net/v/t1.18169-9/12507270_966431780060863_1575329681967091449_n.jpg?_nc_cat=101&ccb=1-3&_nc_sid=a9b1d2&_nc_ohc=nfFsBS7xxBAAX-9lzZy&_nc_ht=scontent.fymy1-2.fna&oh=2bcc86ff224634914c12b630bbce8a4e&oe=609FC240'
+          src='./Jaeri.jpg'
           alt='Generic placeholder'
         />
         <Media.Body>
