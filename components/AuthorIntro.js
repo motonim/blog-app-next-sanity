@@ -10,7 +10,7 @@ const AuthorIntro = () => (
           width={64}
           height={64}
           className='mr-3'
-          src='./Jaeri.jpg'
+          src='/Jaeri.jpg'
           alt='Generic placeholder'
         />
         <Media.Body>
