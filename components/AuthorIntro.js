@@ -10,7 +10,7 @@ const AuthorIntro = () => (
           width={64}
           height={64}
           className='mr-3'
-          src='./blog-profile.jpg'
+          src='https://cdn.sanity.io/images/0i3mmwza/production/6a3f80dab7ec765c9c1adc793c2e3bd0da344314-1080x1080.jpg?w=2000&h=2000&fit=max'
           alt='Generic placeholder'
         />
         <Media.Body>

@@ -11,7 +11,7 @@ export default function PageLayout({ children, className }) {
         <div className={`page-wrapper ${className}`}>{children}</div>
         <footer className='page-footer'>
           <div>
-            <p>document.write(new Date().getFullYear()); &copy; Jaeri Park</p>
+            <p>{document.write(new Date().getFullYear())} &copy; Jaeri Park</p>
           </div>
         </footer>
       </Container>
