@@ -12,7 +12,7 @@ function BlogHeader({ title, subtitle, date, coverImage, author }) {
         {author?.name}
         {', '} {date}
       </p>
-      <h1 className='font-weight-bold blog-detail-header-title mb-0'>
+      <h1 className='font-weight-bold blog-detail-header-title mb-0 mt-5'>
         {title}
       </h1>
       <h2 className='blog-detail-header-subtitle mb-3'>{subtitle}</h2>
