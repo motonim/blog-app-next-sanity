@@ -11,11 +11,7 @@ export default function PageLayout({ children, className }) {
         <div className={`page-wrapper ${className}`}>{children}</div>
         <footer className='page-footer'>
           <div>
-            <a href='#'>courses</a>
-            {' | '}
-            <a href='#'>github</a>
-            {' | '}
-            <a href='#'>facebook</a>
+            <p>document.write(new Date().getFullYear()); &copy; Jaeri Park</p>
           </div>
         </footer>
       </Container>
